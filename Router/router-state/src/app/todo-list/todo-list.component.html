@@ -1,0 +1,47 @@
+<div class="todo-list">
+  <div class="header item-con">
+    <ng-container *ngIf="name | async as username"
+      ><span [ngClass]="{ 'path-param': highlighting }"
+        >{{ username }}'s
+        <span *ngIf="highlighting" class="path-param-num">1</span></span
+      ></ng-container
+    >
+    To-Do-Liste (für heute)
+  </div>
+  <div class="item-con">
+    <div style="height: 25px"></div>
+  </div>
+  <ng-container *ngFor="let item of todoItems">
+    <div
+      class="item-con"
+      [ngClass]="{ 'query-param': highlighting }"
+      *ngIf="item.id !== editedEntry?.id"
+    >
+      <app-todo-element
+        [element]="item"
+        (checkedChange)="checkState($event)"
+        (editElement)="editTodo($event)"
+        (deleteElement)="deleteTodo($event)"
+      >
+        <div *ngIf="highlighting" class="query-param-num">2</div>
+      </app-todo-element>
+    </div>
+    <div class="item-con" *ngIf="item.id === editedEntry?.id">
+      <app-todo-element-editor
+        [element]="editedEntry"
+        (saveTodo)="saveTodo($event)"
+      >
+      </app-todo-element-editor>
+    </div>
+  </ng-container>
+  <div class="item-con" *ngIf="editedEntry?.id === nextId">
+    <app-todo-element-editor
+      [element]="editedEntry"
+      (saveTodo)="saveTodo($event)"
+    >
+    </app-todo-element-editor>
+  </div>
+  <div class="item-con add-todo" (click)="openNewTodo()">
+    <span class="material-icons"> add </span>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="flex flex-col">
+  <div class="flex halfwidth ref-state blue">
+    <div (click)="undoStep()" class="clickable">< Undo</div>
+    <div
+      (click)="redoStep()"
+      class="clickable"
+      [ngClass]="{ disabled: !(nextEnabled | async) }"
+    >
+      Redo >
+    </div>
+    <div class="number blue-solid">2</div>
+  </div>
+  <div class="flex">
+    <app-editor [textArea]="textState | async" (changeText)="addHistory($event)" (undo)="undoStep()" class="flex-grow ref-state red"
+      ><div class="number red-solid">1</div></app-editor
+    >
+    <div class="state">
+      <div>&#123;</div>
+      <div class="spacing ref-state blue" style="padding: 5px 0px 5px 5px">
+        nextStep: "{{ nextEnabled | async }},"
+        <div class="number blue-solid">2</div>
+      </div>
+      <div class="spacing flex ref-state red">
+        <div>text:</div>
+        <div>"{{ textState | async }}"</div>
+        <div class="number red-solid">1</div>
+      </div>
+      <div>&#125;</div>
+      <div class="number">1</div>
+    </div>
+  </div>
+</div>

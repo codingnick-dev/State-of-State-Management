@@ -1,0 +1,37 @@
+:host{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+    margin: 2px;
+    position: relative;
+}
+
+.form{
+    width: 400px;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+.flex{
+    display: flex;
+}
+.align-item-center{
+    align-items: center;
+    justify-content: space-between;
+    
+}
+input{
+    margin: 5px;
+}
+
+.number{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    color: white;
+    background-color: blue;
+    font-size: 30px;
+    padding: 5px;
+}

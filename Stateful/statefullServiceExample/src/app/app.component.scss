@@ -1,0 +1,39 @@
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+}
+
+.state-output{
+    white-space: pre-wrap;
+}
+
+.spacing{
+    margin-left: 10px;
+    position: relative;
+}
+
+.number{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 0px 2px 0px 4px;
+    font-size: 30px;
+    color: white;
+}
+
+.address{
+    border: 2px solid black;
+}
+
+.blueBorder{
+    border: 6px solid blue;
+}
+
+.redBorder{
+    border: 6px solid red;
+}

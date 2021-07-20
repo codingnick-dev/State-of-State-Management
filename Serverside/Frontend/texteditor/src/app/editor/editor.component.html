@@ -1,0 +1,8 @@
+<textarea
+  [(ngModel)]="textArea"
+  (ngModelChange)="textEdit($event)"
+  (keydown.control.z)="undoStep($event)"
+  name="Text1"
+  class="fullsize"
+></textarea>
+<ng-content></ng-content>

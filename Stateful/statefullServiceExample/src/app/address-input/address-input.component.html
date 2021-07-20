@@ -1,0 +1,28 @@
+<ng-container>Rechnungadresse/Lieferadresse</ng-container>
+<div class="flex-col form" [formGroup]="addressGroup">
+  <div class="flex align-item-center flex-grow">
+    <div>Vorname:</div>
+    <div><input type="text" formControlName="firstName" /></div>
+  </div>
+  <div class="flex align-item-center">
+    <div>Nachname:</div>
+    <div><input type="text" formControlName="lastName" /></div>
+  </div>
+  <div class="flex align-item-center">
+    <div>Straße:</div>
+    <div><input type="text" formControlName="street" /></div>
+  </div>
+  <div class="flex align-item-center">
+    <div>Hausnummer:</div>
+    <div><input type="number" formControlName="streetNo" /></div>
+  </div>
+  <div class="flex align-item-center">
+    <div>Postleitzahl:</div>
+    <div><input type="number" formControlName="postalCode" /></div>
+  </div>
+  <div class="flex align-item-center">
+    <div>Stadt:</div>
+    <div><input type="text" formControlName="city" /></div>
+  </div>
+  <ng-content></ng-content>
+</div>

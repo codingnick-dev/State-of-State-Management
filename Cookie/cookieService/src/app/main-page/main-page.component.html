@@ -1,0 +1,37 @@
+<div class="fullheight" *ngIf="settings | async as setting">
+  <div class="top-bar">
+    <div class="left">
+      <div class="center">
+        <div>Company Logo</div>
+        <div class="vert-line"></div>
+        <div>Spezialisten für Angular</div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="center">
+        <div class="settings-button" (click)="openSettings()">
+          <mat-icon aria-hidden="false" aria-label="Example home icon"
+            >settings</mat-icon
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="content"
+    [ngStyle]="{ 'font-size': setting.fontSize + 'px' }"
+    [ngClass]="{
+      light: setting.theme == Themes.light,
+      dark: setting.theme == Themes.dark
+    }"
+  >
+    <div class="number">1</div>
+    {{ values.language[setting.language] }}
+  </div>
+</div>
+<app-settings-menu
+  (closeSetting)="closeSettings()"
+  (settingsChange)="updateSettings()"
+  [settings]="settings"
+  *ngIf="settingsOpen"
+></app-settings-menu>

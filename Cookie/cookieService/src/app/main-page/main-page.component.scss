@@ -1,0 +1,69 @@
+.top-bar {
+  width: 100%;
+  height: 80px;
+  background-color: grey;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 40px;
+  padding: 10px;
+  font-size: 20px;
+}
+.vert-line {
+  background-color: black;
+  width: 2px;
+  height: 60%;
+  margin: 10px;
+}
+
+.settings-button {
+  padding: 10px;
+  background-color: lightgray;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.fullheight {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  position: relative;
+  flex-grow: 1;
+  padding: 2px;
+  font: 15px Arial, sans-serif;
+  border: blue 4px solid;
+}
+
+//Themes
+.light {
+  background-color: white;
+  color: black;
+}
+
+.dark {
+  background-color: rgb(59, 59, 59);
+  color: white;
+}
+
+.number {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  color: white;
+  background-color: blue;
+  padding: 2px 4px 2px 1px;
+}

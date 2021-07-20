@@ -1,0 +1,27 @@
+.flex {
+  display: flex;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.single-row {
+  justify-content: space-between;
+}
+
+.v-center{
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  cursor: pointer;
+  margin: 5px;
+}
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

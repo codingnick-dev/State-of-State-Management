@@ -1,0 +1,42 @@
+<div class="center">
+  <input
+    type="checkbox"
+    value="split"
+    id="splitAddress"
+    [checked]="syncAddress | async"
+    (click)="toggleSync($event)"
+  />
+  <label for="splitAddress">Rechnungadresse weicht von Lieferadresse ab</label>
+</div>
+<div class="flex">
+  <app-address-input [ngClass]="{ blueBorder: highlighting }" class="address"
+    ><div *ngIf="highlighting" class="number" style="background-color: blue">
+      1
+    </div></app-address-input
+  >
+  <app-delivery-address
+    [disabled]="!(syncAddress | async)"
+    [ngClass]="{ redBorder: highlighting }"
+    class="address"
+    ><div *ngIf="highlighting" class="number" style="background-color: red">
+      2
+    </div></app-delivery-address
+  >
+  <div class="center" *ngIf="highlighting">
+    <div>
+      <div class="state-output">&#123;</div>
+      <div class="state-output spacing" style="border: blue 4px solid">
+        {{ stateBilling | async }}
+        <div class="number" style="background-color: blue">1</div>
+      </div>
+      <div class="state-output spacing" style="border: red 4px solid">
+        {{ stateDelivery | async }}
+        <div class="number" style="background-color: red">2</div>
+      </div>
+      <div class="state-output spacing">
+        {{ syncAddressText | async }}
+      </div>
+      <div class="state-output">&#125;</div>
+    </div>
+  </div>
+</div>

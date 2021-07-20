@@ -1,0 +1,45 @@
+.todo-list {
+  min-width: 400px;
+  background-color: rgb(216, 216, 216);
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 6px 6px 5px 5px rgb(0, 0, 0);
+}
+
+.header {
+  font-size: 30px;
+
+  span{
+    font-size: 30px;
+  }
+}
+
+.add-todo {
+  cursor: pointer;
+}
+
+.item-con {
+  width: 95%;
+  border-bottom: 1px solid rgb(77, 77, 77);
+}
+
+.path-param{
+  border: red 2px solid;
+  padding-left: 4px;
+}
+
+.query-param{
+  border: blue 2px solid;
+}
+.query-param-num{
+  background-color: blue;
+  color: white;
+  padding: 2px;
+}
+.path-param-num{
+  background-color: red;
+  color: white;
+  padding: 2px;
+}

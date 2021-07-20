@@ -1,0 +1,22 @@
+<div class="two-col" *ngIf="element | async as result">
+  <ng-container *ngIf="result.type == inputTypes.string">
+    <mat-form-field class="example-form-field">
+      <mat-label>{{ result.transName }}</mat-label>
+      <input matInput type="text" [formControl]="formControl" />
+    </mat-form-field>
+  </ng-container>
+  <ng-container *ngIf="result.type == inputTypes.number">
+    <mat-form-field class="example-form-field">
+      <mat-label>{{ result.transName }}</mat-label>
+      <input matInput type="number" [formControl]="formControl" />
+    </mat-form-field>
+  </ng-container>
+  <ng-container *ngIf="result.type == inputTypes.date">
+    <mat-form-field>
+      <mat-label>{{ result.transName }}</mat-label>
+      <input matInput [matDatepicker]="picker" [formControl]="formControl" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </ng-container>
+</div>

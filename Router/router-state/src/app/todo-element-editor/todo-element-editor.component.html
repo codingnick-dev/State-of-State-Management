@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <div class="todo-wrapper">
+    <div class="check-box-wrapper">
+      <input [(ngModel)]="element.checked" type="checkbox" />
+    </div>
+    <div class="todo-input">
+      <input [(ngModel)]="element.text" type="text" />
+    </div>
+  </div>
+  <div>
+    <div class="saveTodo" (click)="saveClick()">
+      <span class="material-icons"> save </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,112 @@
+.center {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.number {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  color: white;
+  padding: 10px;
+  font-size: 40px;
+  z-index: 2;
+}
+
+.stateOne {
+  border: red 5px solid;
+  position: relative;
+  padding-right: 10px;
+}
+
+.stateTwo {
+  border: blue 5px solid;
+  position: relative;
+  padding-right: 10px;
+}
+
+.small {
+  font-size: 30px;
+  padding: 10px;
+}
+
+.page-wrapper {
+  display: inline-block;
+  padding: 20px;
+  position: relative;
+}
+
+.blueBorder {
+  border: blue 5px solid;
+}
+
+.redBorder {
+  border: red 5px solid;
+}
+
+.next-prev-button {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.next-prev-button > button {
+  margin: 0px 5px;
+}
+
+.nav-bar {
+  background-color: grey;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+  box-shadow: black 2px 2px 2px 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.heading {
+  font-size: 25px;
+  text-align: center;
+  margin-top: 18px;
+  position: relative;
+}
+
+.stateShow {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  line-height: 15px;
+  font-size: 15px;
+  text-align: left;
+
+  div {
+    white-space: pre-wrap;
+  }
+  .marginLeft {
+    margin-left: 20px;
+  }
+}
+
+.selected {
+  color: green;
+}

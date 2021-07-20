@@ -1,0 +1,11 @@
+<div class="flex flex-grow single-row" *ngIf="this.phoneEntry">
+  <div class="v-center">{{ phoneEntry.name }}</div>
+  <div class="flex">
+    <div class="v-center">
+      <span>{{ phoneEntry.number }}</span>
+    </div>
+    <div class="flex-center">
+      <mat-icon class="button" (click)="deleteEntry()">delete</mat-icon>
+    </div>
+  </div>
+</div>

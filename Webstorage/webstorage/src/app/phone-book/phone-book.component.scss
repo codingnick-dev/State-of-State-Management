@@ -1,0 +1,84 @@
+.flex {
+  display: flex;
+}
+
+.page{
+  display: flex;
+  background-color: #E6E8DA;
+}
+
+.column{
+  min-width: 200px;
+  border-left: black 2px solid;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.row{
+  border-bottom: rgba(0, 0, 0, 0.2) 2px solid;
+  padding: 0px 3px;
+}
+
+.number{
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  padding: 7px;
+  font-size: 30px;
+  color: white;
+}
+
+.red-bg{
+  background-color: red;
+}
+
+.blue-bg{
+  background-color: blue;
+}
+
+.phone-book{
+  position: relative;
+  border: red 5px solid;
+}
+
+.entryValue {
+  margin: 10px;
+}
+
+.m-margin-bottom{
+  margin-bottom: 20px;
+}
+
+.state-show{
+  white-space: pre-wrap;
+  margin-left: 10px;
+  border: red 5px solid;
+  position: relative;
+
+  .number{
+    padding: 10px 5px;
+  }
+}
+
+.new-contact{
+  border: blue 5px solid;
+  padding: 5px 60px 5px 5px;
+  position: relative;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.single-row {
+  justify-content: space-between;
+}
+
+.button {
+  cursor: pointer;
+  margin: 0px 5px;
+}

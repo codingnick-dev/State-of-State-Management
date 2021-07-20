@@ -1,0 +1,40 @@
+<div class="flex m-margin-bottom">
+  <div class="center phone-book flex-grow">
+    <div class="page" *ngFor="let page of pages | async">
+      <div class="column" *ngFor="let column of page.columns">
+        <div class="row" *ngFor="let entry of column">
+          <app-phone-entry
+            [phoneEntry]="entry"
+            (removeEntry)="removeEntry($event)"
+          ></app-phone-entry>
+        </div>
+      </div>
+    </div>
+    <div class="number red-bg">1</div>
+  </div>
+  <div class="state-show">
+    <div>[</div>
+    <div style="margin-left: 10px">
+      {{ stateShow | async }},
+      <div>......</div>
+    </div>
+    <div>]</div>
+    <div class="number red-bg">1</div>
+  </div>
+</div>
+<div class="flex">
+  <div class="flex new-contact">
+    <div>
+      <input placeholder="Name" type="text" [formControl]="phoneName" />
+    </div>
+    <div>
+      <input
+        placeholder="PhoneNumber"
+        type="number"
+        [formControl]="phoneNumber"
+      />
+    </div>
+    <div class="button" (click)="addNumber()">Add</div>
+    <div class="number blue-bg">2</div>
+  </div>
+</div>

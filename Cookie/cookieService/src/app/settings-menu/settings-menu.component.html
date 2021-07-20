@@ -1,0 +1,36 @@
+<div class="overlay" [formGroup]="formGroup">
+  <div class="settings">
+    <div class="number">2</div>
+    <div class="topbar">
+      <div class="text-center">Einstellungen</div>
+      <div class="close-button" (click)="closeMenu()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          >close</mat-icon
+        >
+      </div>
+    </div>
+    <div class="h-center">
+      <div class="allOptions">
+        <div class="option">
+          Sprache:
+          <select formControlName="language">
+            <option *ngFor="let language of langauges" [value]="language">
+              {{ language }}
+            </option>
+          </select>
+        </div>
+        <div class="option">
+          Theme:
+          <select formControlName="theme">
+            <option *ngFor="let theme of themes" [value]="theme">
+              {{ theme }}
+            </option>
+          </select>
+        </div>
+        <div class="option">
+          Schriftgröße: <input type="number" formControlName="fontSize" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+.two-col {
+  display: flex;
+  justify-content: space-between;
+}
+
+.two-col > div {
+  margin: 3px;
+}

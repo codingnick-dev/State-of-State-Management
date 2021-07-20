@@ -1,0 +1,89 @@
+<div
+  class="card"
+  [ngClass]="{ redBorder: stateShow }"
+  *ngIf="{
+    steps: allSteps | async,
+    index: stepIndex | async,
+    keys: allStepKeys | async
+  } as obs"
+>
+  <div *ngIf="stateShow" class="number" style="background-color: red">1</div>
+  <div class="nav-bar">
+    <div
+      class="nav-element"
+      *ngFor="let step of obs.steps; let i = index"
+      [ngStyle]="{ opacity: i > obs.index ? 0.3 : 1 }"
+    >
+      <div>
+        <ng-container *ngIf="!step.valid">
+          <span *ngIf="i != obs.index" class="material-icons-outlined">
+            circle
+          </span>
+          <span *ngIf="i == obs.index" class="material-icons-outlined">
+            circle
+          </span>
+        </ng-container>
+        <span *ngIf="step.valid" class="material-icons"> check_circle </span>
+      </div>
+      <div>{{ step.stepName }}</div>
+    </div>
+  </div>
+  <div class="heading">
+    {{ obs.steps[obs.index].stepName }}
+    <div *ngIf="stateShow" class="stateShow">
+      <div>&#123; "registerForm": &#123;</div>
+      <div class="stateOne">
+        <div style="margin-left: 20px">"steps":</div>
+        <div style="margin-left: 20px">&#123;</div>
+        <div style="margin-left: 30px">{{ stateShowSteps | async }}</div>
+        <div style="margin-left: 20px">&#125;,</div>
+        <div style="margin-left: 20px">
+          "selectedStep": {{ stepIndex | async }},
+        </div>
+        <div class="number small" style="background-color: red">1</div>
+      </div>
+      <div class="stateTwo">
+        <div style="margin-left: 20px">"fields":</div>
+        <div style="margin-left: 20px">{{ this.stateShowFields | async }}</div>
+        <div class="number small" style="background-color: blue">2</div>
+      </div>
+      <div style="margin-left: 10px">&#125;</div>
+      <div>&#125;</div>
+    </div>
+  </div>
+  <div class="center">
+    <div
+      class="page-wrapper"
+      [ngClass]="{ blueBorder: stateShow }"
+      style="display: inline-block"
+    >
+      <ng-container *ngFor="let keyValue of obs.keys">
+        <app-form-element [key]="keyValue"></app-form-element>
+      </ng-container>
+      <div
+        *ngIf="stateShow"
+        class="number small"
+        style="background-color: blue"
+      >
+        2
+      </div>
+    </div>
+    <div class="next-prev-button">
+      <button
+        *ngIf="obs.index > 0"
+        (click)="prevStep()"
+        mat-raised-button
+        color="primary"
+      >
+        Zurück
+      </button>
+      <button
+        mat-raised-button
+        [disabled]="!obs.steps[obs.index].valid"
+        (click)="nextStep()"
+      >
+        Nächste
+      </button>
+    </div>
+  </div>
+</div>

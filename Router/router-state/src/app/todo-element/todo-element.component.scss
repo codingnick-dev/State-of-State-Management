@@ -1,0 +1,13 @@
+input[type="checkbox"] {
+  transform: scale(1);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.editTodo {
+  cursor: pointer;
+}

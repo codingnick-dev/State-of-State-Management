@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <div class="d-flex">
+    <div class="check-box-wrapper">
+      <input
+        [ngModel]="element.checked"
+        (ngModelChange)="checkBoxClick($event)"
+        type="checkbox"
+      />
+    </div>
+    <div>{{ element.text }}</div>
+  </div>
+  <div class="d-flex">
+    <div class="editTodo" (click)="editClick()">
+      <span class="material-icons"> edit </span>
+    </div>
+    <div class="editTodo" (click)="deleteClick()">
+      <span class="material-icons"> delete </span>
+    </div>
+    <div class="editTodo">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
